@@ -6,7 +6,7 @@ Each write operation on the device is interpreted as a guess by player B. It is 
 in an internal buffer in the form "xxxx m+ n- abcd\n" , 
 where "xxxx" is the guess, "m" is the number of in-place digits, "n" is the number of out-of-place digits and "abcd" is the number 
 of guesses so far. 
-Each read operation on the device is a regular read from the internal buffer. <br>
+Each read operation on the device is a regular read from the internal buffer. <br><br> 
 Required commands: <br>
 make -> compile <br>
 sudo insmod ./mastermind.ko mmind_number="1234"  mmind_max_guesses=5 -> set the maximum guess number and the secret number (module parameters)
@@ -14,9 +14,9 @@ grep mastermind /proc/devices -> getting the major number <br>
 mknod dev/mastermind c <major_number> 0 -> creating the device node with the major number
 
 echo "1234" > /dev/mastermind -> writing to device <br>
-cat /dev/mastermind -> reading from device
-
-Required commands for ioctl commands:
+cat /dev/mastermind -> reading from device<br> 
+<br> 
+Required commands for ioctl commands:<br> 
 sudo gcc -o <test> <test.c> -> compiling the file <br> 
 ./mmind_remaining -> to see remaining tries <br>
 ./mmind_newgame <new_mmind_number> -> to start new session with new mmind_number <br>
